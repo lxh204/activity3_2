@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Thymeleaf 测试页面</title>
+</head>
+<body>
+    <h1 th:text="${title}">标题</h1>
+    
+    <div>
+        <p th:text="${message}">消息内容</p>
+        <p>当前时间戳：<span th:text="${currentTime}">0</span></p>
+    </div>
+    
+    <div>
+        <h2>Session 数据</h2>
+        <p>用户：<span th:text="${session.userSession}">未知</span></p>
+        <p>登录时间：<span th:text="${session.loginTime}">0</span></p>
+    </div>
+</body>
+</html>

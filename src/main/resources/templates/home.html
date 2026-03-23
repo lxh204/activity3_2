@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title th:text="#{home.title}">Home</title>
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <h1 th:text="${message}"></h1>
-    <p th:text="'欢迎学习: ' + ${message}"></p>
+    <div>
+        <span th:text="#{common.lang.switch}">Language</span>
+        <a th:href="@{/home(lang='zh_CN')}" th:text="#{common.lang.zh}">Chinese</a>
+        <a th:href="@{/home(lang='en_US')}" th:text="#{common.lang.en}">English</a>
+    </div>
+
+    <h1 th:text="#{home.heading}">Welcome to the Home Page</h1>
+    <h2 th:text="#{home.stack(${message})}">Current stack: Spring Boot</h2>
+    <p th:text="#{home.description(${message})}">Welcome to learn: Spring Boot</p>
+    <p>
+        <a th:href="@{/thym-test}" th:text="#{home.demoLink}">View Thymeleaf i18n demo</a>
+    </p>
 </body>
 </html>

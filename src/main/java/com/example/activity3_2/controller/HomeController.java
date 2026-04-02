@@ -10,6 +10,8 @@ public class HomeController {
     @GetMapping("/home")
     public String home(Model model) {
         model.addAttribute("message", "Spring Boot");
+        java.util.List<String> itemList = java.util.Arrays.asList("Java", "Spring", "Thymeleaf", "Boot");
+        model.addAttribute("itemList", itemList);
         return "home";
     }
 }

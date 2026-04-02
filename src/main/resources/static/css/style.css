@@ -1,0 +1,55 @@
+.fragment-page {
+    margin: 0;
+    font-family: "Microsoft YaHei", sans-serif;
+    background: #f5f7fb;
+    color: #1f2933;
+}
+
+.page-header,
+.page-footer,
+.demo-card {
+    width: min(960px, calc(100% - 32px));
+    margin: 16px auto;
+    padding: 20px 24px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.page-header {
+    margin-top: 24px;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+}
+
+.page-nav {
+    margin-top: 12px;
+}
+
+.page-nav a,
+.demo-card a {
+    margin-right: 12px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.page-nav a:hover,
+.demo-card a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-bottom: 8px;
+}
+
+.demo-card h2,
+.demo-card h1 {
+    margin-top: 0;
+}
+
+.home-fragment {
+    width: auto;
+    margin: 0;
+    box-shadow: none;
+    background: #f8fafc;
+    border: 1px solid #dbeafe;
+}

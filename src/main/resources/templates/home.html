@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="#{home.title}">Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+<main th:fragment="homePage" class="demo-card home-fragment">
     <div>
         <span th:text="#{common.lang.switch}">Language</span>
-        <a th:href="@{/home(lang='zh_CN')}" th:text="#{common.lang.zh}">Chinese</a>
-        <a th:href="@{/home(lang='en_US')}" th:text="#{common.lang.en}">English</a>
+        <a th:href="@{/home?lang=zh_CN}" th:text="#{common.lang.zh}">Chinese</a>
+        <a th:href="@{/home?lang=en_US}" th:text="#{common.lang.en}">English</a>
     </div>
 
-    <h1 th:text="#{home.heading}">Welcome to the Home Page</h1>
-    <h2 th:text="#{home.stack(${message})}">Current stack: Spring Boot</h2>
-    <p th:text="#{home.description(${message})}">Welcome to learn: Spring Boot</p>
+    <h1 th:text="#{home.heading}">Welcome</h1>
+    <h2 th:text="#{home.stack}">Tech Stack</h2>
+    <p th:text="#{home.description}">Spring Boot + Thymeleaf i18n demo</p>
     <p>
-        <a th:href="@{/thym-test}" th:text="#{home.demoLink}">View Thymeleaf i18n demo</a>
+        <a th:href="@{/thym-test}" th:text="#{home.demoLink}">Thymeleaf demo</a>
     </p>
+    <p>
+        <a th:href="@{/index}">View fragment expression demo</a>
+    </p>
+    <h1 th:text="${message}">Spring Boot</h1>
+
+    <ul>
+        <li th:each="item : ${itemList}" th:text="${item}">Java</li>
+    </ul>
+</main>
 </body>
 </html>
